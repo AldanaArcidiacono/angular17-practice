@@ -8,16 +8,12 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, NgOptimizedImage, FormsModule],
   template: `
     <p>{{ greet }}, {{ user }}!</p>
-    <!-- los [] son como en Vue los : (Operador de atributos) -->
     <img [ngSrc]="avatar" alt="" [width]="size" [height]="size" priority />
 
     <div>
       <p>Age: {{ age }}</p>
 
-      <!-- Eventos es con (), Declarativamente -->
       <button (click)="age = age + 1">Cumpleaños!🌈</button>
-      <!-- Siempre va ejecutado el manejador de eventos, dentro le podemos pasar parametros. 
-      Solo se ejecuta en el click. El objeto evento no es obligatorio -->
       <button (click)="addTenYears($event, 5)">Añadir 5 años!🌈</button>
       <button (click)="addTenYears($event, 10)">Añadir 10 años!🌈</button>
     </div>
@@ -46,7 +42,6 @@ export class GreetingsComponent {
   size = 100;
   age = 10;
 
-  // Recoger eventos, pasar variables y llamar a una funvion en template
   addTenYears(event: Event, value: number) {
     this.age = this.age + value;
     console.log(event);
