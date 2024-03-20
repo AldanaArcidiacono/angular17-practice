@@ -1,20 +1,43 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SampleNgComponent } from './shared/sample-ng/sample-ng.component';
+import { routes } from './app.routes';
+import { HeaderComponent } from './shared/header/header/header.component';
+import { MenuOptionsComponent } from './shared/menu/menu-options/menu-options.component';
+import { MenuOptions } from './interfaces/menu-options';
 import { HomeComponent } from './features/home/home.component';
+import { AboutComponent } from './shared/about/about.component';
 
 @Component({
   selector: 'isdi-root',
   standalone: true,
-  imports: [RouterOutlet, SampleNgComponent, HomeComponent],
-  templateUrl: './app.component.html',
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    MenuOptionsComponent,
+    HomeComponent,
+    AboutComponent,
+  ],
+  template: `
+    <isdi-header [title]="title">
+      <isdi-menu [items]="menuOptions" />
+    </isdi-header>
+    <main>
+      <router-outlet />
+    </main>
+  `,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  pages: string[] = ['Home', 'Sample'];
-  currentPage: string = 'Home';
+  title = 'Angular v17 Practice';
 
-  selectPage(page: string) {
-    this.currentPage = page;
+  menuOptions: MenuOptions[] = [];
+
+  constructor() {
+    this.menuOptions = routes
+      .filter((route) => route.path !== '**' && route.path !== '')
+      .map((route) => ({
+        title: route.title as string,
+        path: route.path as string,
+      }));
   }
 }
