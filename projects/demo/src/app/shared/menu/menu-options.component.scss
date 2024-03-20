@@ -1,0 +1,14 @@
+ul {
+  align-items: center;
+  display: flex;
+  li {
+    list-style: none;
+    a {
+      color: var(--electric-violet);
+      font-weight: 700;
+      margin-left: 0.5rem;
+      padding: 0.3rem;
+      text-decoration: none;
+    }
+  }
+}

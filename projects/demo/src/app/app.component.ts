@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routes } from './app.routes';
-import { HeaderComponent } from './shared/header/header/header.component';
-import { MenuOptionsComponent } from './shared/menu/menu-options/menu-options.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MenuOptionsComponent } from './shared/menu/menu-options.component';
 import { MenuOptions } from './interfaces/menu-options';
 import { HomeComponent } from './features/home/home.component';
 import { AboutComponent } from './shared/about/about.component';
