@@ -68,6 +68,7 @@ import { FormsModule } from '@angular/forms';
         font-weight: 600;
         margin-right: 0.5rem;
         padding: 0.3rem;
+        // Agregar hover!
       }
     }
     .user-name {
