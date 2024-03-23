@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'isdi-header',
   standalone: true,
-  imports: [],
+  imports: [LogoComponent],
   template: ` <header>
-    <h1>{{ title }}</h1>
+    <div class="title">
+      <isdi-logo [options]="{ side: '5rem' }"></isdi-logo>
+      <h1>{{ title }}</h1>
+    </div>
     <!-- Child Component -->
     <ng-content></ng-content>
   </header>`,

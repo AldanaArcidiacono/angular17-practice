@@ -13,6 +13,21 @@ export const routes: Routes = [
     // loadComponent: () => import('./features/home/home.component'),
   },
   {
+    path: 'todo',
+    title: 'ToDo',
+    loadComponent: () => AboutComponent,
+  },
+  {
+    path: 'notes',
+    title: 'Notes',
+    loadComponent: () => AboutComponent,
+  },
+  {
+    path: 'users',
+    title: 'Users',
+    loadComponent: () => AboutComponent,
+  },
+  {
     path: 'about',
     title: 'About',
     loadComponent: () => AboutComponent,

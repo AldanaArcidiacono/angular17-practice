@@ -10,6 +10,7 @@ import { MenuOptions } from '../../interfaces/menu-options';
     <ul>
       @for (item of items; track $index) {
         <li>
+          <!-- routerLinkActive = Adds a class if is the active route -->
           <a [routerLink]="item.path" routerLinkActive="active">{{
             item.title
           }}</a>
