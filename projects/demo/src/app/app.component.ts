@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routes } from './app.routes';
-import { HeaderComponent } from './shared/header/header/header.component';
-import { MenuOptionsComponent } from './shared/menu/menu-options/menu-options.component';
-import { MenuOptions } from './interfaces/menu-options';
-import { HomeComponent } from './features/home/home.component';
-import { AboutComponent } from './shared/about/about.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MenuOptionsComponent } from './shared/menu/menu-options.component';
+import { MenuOptions } from './core/types/menu-options';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'isdi-root',
@@ -14,8 +13,7 @@ import { AboutComponent } from './shared/about/about.component';
     RouterOutlet,
     HeaderComponent,
     MenuOptionsComponent,
-    HomeComponent,
-    AboutComponent,
+    FooterComponent,
   ],
   template: `
     <isdi-header [title]="title">
@@ -24,11 +22,13 @@ import { AboutComponent } from './shared/about/about.component';
     <main>
       <router-outlet />
     </main>
+    <isdi-footer [brand]="brand" />
   `,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Angular v17 Practice';
+  brand = 'Aldana Arcidiacono';
 
   menuOptions: MenuOptions[] = [];
 

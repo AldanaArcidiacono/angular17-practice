@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
-import { AboutComponent } from './shared/about/about.component';
+import { AboutComponent } from './features/about/about.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -11,6 +11,21 @@ export const routes: Routes = [
     loadComponent: () => HomeComponent,
     // Cuando el componente export DEFAULT class HomeComponent {}
     // loadComponent: () => import('./features/home/home.component'),
+  },
+  {
+    path: 'todo',
+    title: 'ToDo',
+    loadComponent: () => AboutComponent,
+  },
+  {
+    path: 'notes',
+    title: 'Notes',
+    loadComponent: () => AboutComponent,
+  },
+  {
+    path: 'users',
+    title: 'Users',
+    loadComponent: () => AboutComponent,
   },
   {
     path: 'about',
