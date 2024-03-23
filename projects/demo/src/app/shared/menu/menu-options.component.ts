@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuOptions } from '../../interfaces/menu-options';
+import { MenuOptions } from '../../core/types/menu-options';
 
 @Component({
   selector: 'isdi-menu',
