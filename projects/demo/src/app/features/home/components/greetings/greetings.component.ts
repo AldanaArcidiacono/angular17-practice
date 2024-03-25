@@ -1,11 +1,12 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { InputComponent } from '../../../../shared/input/input.component';
+import { ButtonComponent } from '../../../../shared/button/button.component';
 
 @Component({
   selector: 'isdi-greetings',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, FormsModule],
+  imports: [CommonModule, NgOptimizedImage, InputComponent, ButtonComponent],
   template: `
     <div class="avatar">
       <img
@@ -15,28 +16,26 @@ import { FormsModule } from '@angular/forms';
         [height]="size"
         priority
       />
-      <div class="user-info">
-        <p>{{ greet }}, {{ user }}!</p>
-        <p>Age: {{ age }}</p>
-      </div>
+      <p>{{ greet }}, {{ user }}!</p>
+    </div>
+
+    <isdi-input
+      labelFor="user-name"
+      labelText="Change user name:"
+      placeholder="Type de users name..."
+      [value]="user"
+      (valueChange)="onInputValueChange($event)"
+    />
+
+    <div class="user-age">
+      <p>Your age is:</p>
+      <p class="age">{{ age }}</p>
     </div>
 
     <div class="years-buttons">
-      <button (click)="age = age + 1">Happy Birthday!🌈</button>
-      <button (click)="addTenYears($event, 5)">Add 5 years!🌈</button>
-      <button (click)="addTenYears($event, 10)">Add 10 years!🌈</button>
-    </div>
-
-    <div class="user-name">
-      <label for="userName">
-        <span class="label-text">User name:</span>
-        <input
-          type="text"
-          name=""
-          placeholder="Write your name!"
-          [(ngModel)]="user"
-        />
-      </label>
+      <isdi-button btnText="Birthday!🌈" (buttonClick)="age = age + 1" />
+      <isdi-button btnText="Add 5 years!" (buttonClick)="addMoreYears(5)" />
+      <isdi-button btnText="Add 10 years!" (buttonClick)="addMoreYears(10)" />
     </div>
   `,
   styles: `
@@ -55,32 +54,28 @@ import { FormsModule } from '@angular/forms';
         margin: 0.2rem 0.5rem;
       }
     }
+    .user-age {
+      align-items: center;
+      display: flex;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -0.125rem;
+      .age {
+        align-items: center;
+        background-color: var(--my-pink);
+        border-radius: 6px;
+        color: var(--my-pink-strong);
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin-left: 10px;
+        width: 50px;
+      }
+    }
     .years-buttons {
       display: flex;
       margin-bottom: 1.5rem;
-      button {
-        all: unset;
-        color: var(--vivid-pink);
-        background-color: white;
-        border: 1px solid var(--vivid-pink);
-        border-radius: 0.3rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-right: 0.5rem;
-        padding: 0.3rem;
-        // Agregar hover!
-      }
-    }
-    .user-name {
-      input {
-        margin-left: 0.5rem;
-      }
-      label {
-        font-size: 1.2rem;
-        font-weight: 400;
-        line-height: 100%;
-        letter-spacing: -0.125rem;
-      }
     }
   `,
 })
@@ -94,12 +89,17 @@ export class GreetingsComponent {
   size = 80;
   age = 10;
 
-  addTenYears(event: Event, value: number) {
-    this.age = this.age + value;
-    console.log(event);
-  }
-
   updateName(value: string) {
     this.user = value;
+  }
+
+  // Updates the property of the parent component with the new value
+  onInputValueChange(newValue: string) {
+    this.user = newValue;
+  }
+
+  // Handles the event click
+  addMoreYears(value: number) {
+    this.age = this.age + value;
   }
 }

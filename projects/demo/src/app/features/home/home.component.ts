@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { GreetingsComponent } from './components/greetings/greetings.component';
 import { CounterListComponent } from './components/counter-list/counter-list.component';
+import { ButtonComponent } from '../../shared/button/button.component';
 
 @Component({
   selector: 'isdi-home',
   standalone: true,
-  imports: [GreetingsComponent, CounterListComponent],
+  imports: [GreetingsComponent, CounterListComponent, ButtonComponent],
   template: `
     <div class="home">
       <div class="app">
@@ -13,7 +14,7 @@ import { CounterListComponent } from './components/counter-list/counter-list.com
 
         <nav>
           @for (page of pages; track $index) {
-            <button (click)="selectPage(page)">{{ page }}</button>
+            <isdi-button [btnText]="page" (buttonClick)="selectPage(page)" />
           }
         </nav>
       </div>
@@ -64,6 +65,9 @@ import { CounterListComponent } from './components/counter-list/counter-list.com
           'Apple Color Emoji',
           'Segoe UI Emoji',
           'Segoe UI Symbol';
+      }
+      .content {
+        margin-top: 2.5rem;
       }
     }
   `,
