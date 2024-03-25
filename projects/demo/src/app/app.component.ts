@@ -16,13 +16,15 @@ import { FooterComponent } from './shared/footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <isdi-header [title]="title">
-      <isdi-menu [items]="menuOptions" />
-    </isdi-header>
-    <main>
-      <router-outlet />
-    </main>
-    <isdi-footer [brand]="brand" />
+    <div class="app">
+      <isdi-header [title]="title">
+        <isdi-menu [items]="menuOptions" />
+      </isdi-header>
+      <main>
+        <router-outlet />
+      </main>
+      <isdi-footer [brand]="brand" />
+    </div>
   `,
   styleUrl: './app.component.scss',
 })

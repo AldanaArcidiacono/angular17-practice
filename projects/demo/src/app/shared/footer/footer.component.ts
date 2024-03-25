@@ -14,12 +14,10 @@ import { Component, Input } from '@angular/core';
     footer {
       align-items: center;
       background-color: var(--my-black);
-      bottom: 0;
       color: var(--my-pink);
       display: flex;
       justify-content: space-between;
       padding-inline: 0.7rem;
-      position: absolute;
       width: 100%;
       p {
         margin-block: 0.8rem;
