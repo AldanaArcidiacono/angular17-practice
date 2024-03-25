@@ -32,20 +32,6 @@ import { ButtonComponent } from '../../shared/button/button.component';
   styles: `
     .home {
       margin-inline: 2rem;
-      .app {
-        button {
-          all: unset;
-          color: var(--vivid-pink);
-          background-color: white;
-          border: 1px solid var(--vivid-pink);
-          border-radius: 0.3rem;
-          font-size: 0.9rem;
-          font-weight: 600;
-          margin-right: 0.5rem;
-          padding: 0.3rem;
-          // Agregar hover!
-        }
-      }
       h2 {
         font-size: 1.5rem;
         color: var(--gray-900);
@@ -65,6 +51,9 @@ import { ButtonComponent } from '../../shared/button/button.component';
           'Apple Color Emoji',
           'Segoe UI Emoji',
           'Segoe UI Symbol';
+      }
+      isdi-button:first-child {
+        margin-right: 10px;
       }
       .content {
         margin-top: 2.5rem;

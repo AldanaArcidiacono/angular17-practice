@@ -42,5 +42,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  min-height: 100vh;
+  isdi-header {
+    grid-area: header;
+  }
+  main {
+    grid-area: main;
+  }
+  isdi-footer {
+    height: fit-content;
+    grid-area: footer;
+  }
+  .app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 0fr 2fr 0fr;
+    grid-template-areas:
+      "header  header"
+      "main main"
+      "footer  footer";
+  }
 }

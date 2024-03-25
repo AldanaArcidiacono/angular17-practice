@@ -14,7 +14,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
       cursor: pointer;
       font-size: 0.9rem;
       font-weight: 600;
-      margin-right: 0.5rem;
       padding: 0.3rem 0.5rem;
     }
     button:hover {

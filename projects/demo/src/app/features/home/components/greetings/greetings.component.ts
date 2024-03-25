@@ -76,6 +76,9 @@ import { ButtonComponent } from '../../../../shared/button/button.component';
     .years-buttons {
       display: flex;
       margin-bottom: 1.5rem;
+      isdi-button {
+        margin-right: 10px;
+      }
     }
   `,
 })
