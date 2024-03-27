@@ -9,11 +9,7 @@ export type LogoOptions = {
   standalone: true,
   imports: [],
   templateUrl: './logo-component.svg',
-  styles: `
-    svg {
-      padding: 0.7rem;
-    }
-  `,
+  styles: ``,
 })
 export class LogoComponent implements OnInit {
   @Input() options!: LogoOptions;
@@ -26,12 +22,13 @@ export class LogoComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = {
-      side: '25rem',
+      side: '5rem',
       ...this.options,
     };
   }
 
   onClick(path: string) {
+    console.log('click');
     this.logoClick.next(path);
   }
 }

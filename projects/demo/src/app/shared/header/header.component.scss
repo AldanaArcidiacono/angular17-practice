@@ -3,10 +3,14 @@ header {
   background-color: var(--my-black);
   display: flex;
   justify-content: space-between;
-  padding-inline: 0.7rem;
+  padding: 0.7rem;
   .title {
     align-items: center;
     display: flex;
+    .logo {
+      display: flex;
+      margin-right: 0.5rem;
+    }
     h1 {
       font-size: 1.8rem;
       color: var(--my-pink);
@@ -26,9 +30,6 @@ header {
         "Apple Color Emoji",
         "Segoe UI Emoji",
         "Segoe UI Symbol";
-      isdi-logo {
-        display: flex;
-      }
     }
   }
 }

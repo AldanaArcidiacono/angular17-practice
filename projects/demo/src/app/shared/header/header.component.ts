@@ -7,7 +7,7 @@ import { LogoComponent } from '../logo/logo.component';
   imports: [LogoComponent],
   template: ` <header>
     <div class="title">
-      <isdi-logo [options]="{ side: '5rem' }"></isdi-logo>
+      <isdi-logo class="logo" [options]="{ side: '2.5rem' }"></isdi-logo>
       <h1>{{ title }}</h1>
     </div>
     <!-- Child Component -->

@@ -92,7 +92,8 @@
             "styles": [
               "projects/demo/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/demo/karma.conf.js"
           }
         },
         "lint": {
